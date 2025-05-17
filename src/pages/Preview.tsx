@@ -119,7 +119,7 @@ const Preview = () => {
       <DownloadResumeDialog 
         open={showDownloadDialog} 
         onOpenChange={setShowDownloadDialog}
-        resumeName={`${resumeData.personalInfo?.name || 'Resume'}`}
+        resumeName={`${resumeData.personalInfo?.fullName || 'Resume'}`}
       />
     </div>
   );
