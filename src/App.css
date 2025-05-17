@@ -150,3 +150,33 @@
 .animate-floating {
   animation: floating 3s ease-in-out infinite;
 }
+
+/* Login page specific styles */
+.login-background {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at top right, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.login-card {
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 0 hsla(0, 0%, 100%, 0.2);
+}
+
+.login-shadow-light {
+  box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.05);
+}
+
+.login-shadow-medium {
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.08);
+}
+
+.login-shadow-heavy {
+  box-shadow: 0 10px 50px 15px rgba(0, 0, 0, 0.1);
+}
