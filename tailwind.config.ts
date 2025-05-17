@@ -95,16 +95,49 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'floating': {
+					'0%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-15px)' },
+					'100%': { transform: 'translateY(0px)' }
+				},
+				'rotate3d': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(360deg)' }
+				},
+				'shine': {
+					to: { transform: 'translateX(100%)' }
+				},
+				'gradient-animation': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
+				},
+				'pulsate': {
+					'0%': { opacity: '1', transform: 'scale(1)' },
+					'50%': { opacity: '0.8', transform: 'scale(1.05)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out'
+				'fade-in': 'fade-in 0.3s ease-out',
+				'floating': 'floating 3s ease-in-out infinite',
+				'rotate-3d': 'rotate3d 20s linear infinite',
+				'shine': 'shine 3s infinite',
+				'gradient-animation': 'gradient-animation 15s ease infinite',
+				'pulsate': 'pulsate 2s ease-in-out infinite'
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				serif: ['Georgia', 'serif']
+			},
+			backdropBlur: {
+				xs: '2px',
+			},
+			boxShadow: {
+				'3d': '0 10px 30px -10px rgba(0, 0, 0, 0.3), 0 5px 15px -5px rgba(0, 0, 0, 0.2)',
 			}
 		}
 	},
