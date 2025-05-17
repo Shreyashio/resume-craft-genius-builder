@@ -133,19 +133,19 @@ const Templates = () => {
                 </TabsList>
                 
                 <div className="p-6 flex justify-center overflow-auto max-h-[600px]">
-                  <TabsContent value="modern" className="m-0 w-full" forceMount={selectedTab === "modern"}>
+                  <TabsContent value="modern" className="m-0 w-full" forceMount={selectedTab === "modern" ? true : undefined}>
                     <div className="transform scale-50 origin-top">
                       <ModernTemplate />
                     </div>
                   </TabsContent>
                   
-                  <TabsContent value="professional" className="m-0 w-full" forceMount={selectedTab === "professional"}>
+                  <TabsContent value="professional" className="m-0 w-full" forceMount={selectedTab === "professional" ? true : undefined}>
                     <div className="transform scale-50 origin-top">
                       <ProfessionalTemplate />
                     </div>
                   </TabsContent>
                   
-                  <TabsContent value="minimal" className="m-0 w-full" forceMount={selectedTab === "minimal"}>
+                  <TabsContent value="minimal" className="m-0 w-full" forceMount={selectedTab === "minimal" ? true : undefined}>
                     <div className="transform scale-50 origin-top">
                       <MinimalTemplate />
                     </div>
