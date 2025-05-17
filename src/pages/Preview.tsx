@@ -1,5 +1,5 @@
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useResume } from "@/context/ResumeContext";
 import { Button } from "@/components/ui/button";
@@ -9,11 +9,13 @@ import ProfessionalTemplate from "@/components/templates/ProfessionalTemplate";
 import MinimalTemplate from "@/components/templates/MinimalTemplate";
 import { FileText, Download, Edit, Check } from "lucide-react";
 import { toast } from "sonner";
+import DownloadResumeDialog from "@/components/DownloadResumeDialog";
 
 const Preview = () => {
   const navigate = useNavigate();
   const { resumeData } = useResume();
   const resumeRef = useRef<HTMLDivElement>(null);
+  const [showDownloadDialog, setShowDownloadDialog] = useState(false);
   
   const renderSelectedTemplate = () => {
     switch (resumeData.selectedTemplate) {
@@ -29,16 +31,8 @@ const Preview = () => {
   };
   
   const handleDownload = () => {
-    // In a real application, this would trigger PDF generation
-    toast.success("Resume download started!", {
-      description: "Your resume is being prepared as a PDF.",
-      action: {
-        label: "Open",
-        onClick: () => {
-          console.log("Open action clicked");
-        }
-      }
-    });
+    // Show the download dialog instead of direct download
+    setShowDownloadDialog(true);
   };
   
   const handleCheckATS = () => {
@@ -120,6 +114,13 @@ const Preview = () => {
           </Card>
         </div>
       </div>
+      
+      {/* Download Resume Dialog */}
+      <DownloadResumeDialog 
+        open={showDownloadDialog} 
+        onOpenChange={setShowDownloadDialog}
+        resumeName={`${resumeData.personalInfo?.name || 'Resume'}`}
+      />
     </div>
   );
 };
