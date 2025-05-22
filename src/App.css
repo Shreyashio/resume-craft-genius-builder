@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -179,4 +178,74 @@
 
 .login-shadow-heavy {
   box-shadow: 0 10px 50px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ATS-Friendly Resume Styling */
+.resume-page {
+  font-size: 12pt;
+  line-height: 1.5;
+  color: #333;
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.5in;
+  margin: 0 auto;
+}
+
+.resume-section {
+  margin-bottom: 1rem;
+}
+
+.resume-section-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.25rem;
+}
+
+@media print {
+  .resume-page {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+/* Live Preview Styles */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.glow-effect {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+}
+
+/* Template Preview card styles */
+.card-3d {
+  transition: all 0.3s;
+}
+
+.card-3d:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 35px -10px rgba(0, 0, 0, 0.25), 
+    0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ATS optimization styles */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .resume-page {
+    background: white;
+  }
 }
